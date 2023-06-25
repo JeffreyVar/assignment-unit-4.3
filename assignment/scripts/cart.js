@@ -56,16 +56,20 @@ console.log(basket);*/
   //- return `false` if the basket contains *less* than max number of items
   //- return `true` otherwise (equal or more than maxItems)
 
+
+// The code seems to console out correctly, but does not seem to "pass the test."
 const maxItems = 5;
 
 function isFull(array) {
-    if (array >= maxItems) {
+    if (array.length >= maxItems) {
         return true;
     } else {
         return false;
     }
 }
-isFull(basket);
+console.log(isFull(basket));
+console.log(isFull(bag));
+console.log(isFull(cart));
 
 // 3. Update the required `addItem` function to:
 // - Use the `isFull` function to prevent more than `maxItems` from being added to the basket. 
@@ -73,15 +77,19 @@ isFull(basket);
 // - If there was no room and the item could not be added return `false`
 
 
-//did not finish
-function updatedAddItem(item) {
-    if (array < maxItems) {
+function updatedAddItem(item, array) {
+    if (isFull(array) === false) {
         array.push(item);
         return true; 
     } else {
         return false;
     }
 }
+
+console.log(updatedAddItem(5, bag));
+console.log(bag);
+console.log(updatedAddItem('Chicken', basket));
+console.log(basket);
 
 
 
